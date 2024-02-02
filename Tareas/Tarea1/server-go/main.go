@@ -1,31 +1,38 @@
 package main
 
 import (
-	"fmt"
+	"log"
 
-	"net/http"
-
-	"github.com/gin-gonic/gin"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 )
 
-type todo struct{
-	ID			string 			//json:id
-	Item 		string			//json:tittle
-	Completed 	bool			//json:completed
-}
-
-var todos = []todo{
-	{ID:"1", Item:"Clean Room" , Completed:false},
-	{ID:"2", Item:"Read book" , Completed:false},
-}
-
-func getTodos(context *gin.Context){
-	context.IndentedJSON(http.StatusOK, todos)
+type data struct{
+	Carne		string 			//json:id
+	Nombre 		string			//json:tittle
 }
 
 func main() {
-	fmt.Println("This is my first program in Go")
-	router := gin.Default()
-	router.GET("/todos", getTodos)
-	router.Run("localhost:9000")
+	app := fiber.New()
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "http://localhost:3000",
+		AllowHeaders: "Origin, Content-Type, Accept",
+	}))
+
+	app.Get("/healthcheck",func(c *fiber.Ctx) error {
+		return c.SendString("Ok")
+	})
+
+	app.Get("/data",func(c *fiber.Ctx) error {
+		
+		datos := []data{
+			{
+				Carne: "201313997",
+				Nombre: "Luis Noe Martinez Rivera",
+			},
+		}
+		return c.JSON(datos)
+	})
+	log.Fatal(app.Listen(":9000"))
+
 }
