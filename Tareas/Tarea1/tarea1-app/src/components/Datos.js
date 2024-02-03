@@ -9,9 +9,8 @@ function Datos(){
     }
 
     useEffect(() => {getDatos()});
-
-
-    return <h1>Obtener datos</h1>
+    
+    return (<h1>Obtener datos</h1>)
 }
 
 export default Datos
