@@ -1,17 +1,13 @@
 # Tarea 1
 
+LUIS NOE MARTINEZ RIVERA 201313997
+
 ## REST API
-
-### INSTALACION GO
-
-+   https://go.dev/doc/install
-+   Verificar instalación: $go version
 
 ### CONFIGURACION GO
 
 +   go mod init e
 +   go get github.com/gin-gonic/gin
-
 
 ## DOCKER REST API
 
@@ -23,9 +19,6 @@
 
 ## FRONT-END
 
-### INSTALACION REACT
-
-
 ## DOCKER FRONT-END
 
 + docker build -t frontend-tarea1 . 
@@ -36,11 +29,19 @@
 
 ## RESUMEN
 
-+ Creación de imagenes
++ Verificación de imagenes
 
-+ Creación y ejecución de contenedores
+![Descripción de la imagen](2%20Docker%20images%20-%20tarea%201.PNG)
+
+
++ Verificacion de contenedores
+
+![Descripción de la imagen](1%20Docker%20ps%20-%20tarea%201.PNG)
 
 + Probando app mas servicio
 
+![Descripción de la imagen](3%20Servicios%20-%20Tarea1.PNG)
 
++ Servicios en contenedores activos
 
+![Descripción de la imagen](4%20Docker%20ps%20-%20ejecucion%20-%20tarea1.PNG)
