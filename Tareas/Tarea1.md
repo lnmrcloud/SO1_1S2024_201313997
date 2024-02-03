@@ -31,17 +31,17 @@ LUIS NOE MARTINEZ RIVERA 201313997
 
 + Verificación de imagenes
 
-![Descripción de la imagen](2%20Docker%20images%20-%20tarea%201.PNG)
+![Verificación de imagenes](2%20Docker%20images%20-%20tarea%201.PNG)
 
 
 + Verificacion de contenedores
 
-![Descripción de la imagen](1%20Docker%20ps%20-%20tarea%201.PNG)
+![Verificacion de contenedores](1%20Docker%20ps%20-%20tarea%201.PNG)
 
 + Probando app mas servicio
 
-![Descripción de la imagen](3%20Servicios%20-%20Tarea1.PNG)
+![Probando app mas servicio](3%20Servicios%20-%20Tarea1.PNG)
 
 + Servicios en contenedores activos
 
-![Descripción de la imagen](4%20Docker%20ps%20-%20ejecucion%20-%20tarea1.PNG)
+![Servicios en contenedores activos](4%20Docker%20ps%20-%20ejecucion%20-%20tarea1.PNG)
