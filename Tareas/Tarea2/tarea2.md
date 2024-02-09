@@ -17,16 +17,19 @@ LUIS NOE MARTINEZ RIVERA 201313997
 
 ## DOCKER FRONT-END
 
++ docker build -t restapi-tarea2 . 
++ docker images
++ docker run -p 8080:8080 tag
+
 Verificar el estado de las imagenes y ambiente local o red local de tarea
 
-+ docker build -t frontend-tarea1 . 
++ docker build -t frontend-tarea2 . 
 + docker images
 + docker run -p 3000:3000 3322f48e18e0
 + docker ps
 + docker stop tag-container
 
 ## DOCKER-COMPOSE
-
 
 
 

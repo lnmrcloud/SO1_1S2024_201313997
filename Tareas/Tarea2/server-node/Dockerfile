@@ -1,15 +1,15 @@
 FROM node:18-alpine
 
-RUN mkdir /server-node
+RUN mkdir -p /server-node
 
-WORKDIR /home/node/app
+WORKDIR /server-node
 
-COPY package*.json ./
+COPY package.json /server-node/
 
 RUN npm install
 
-COPY *.js . 
+COPY . /server-node/
 
 EXPOSE 8080
 
-CMD [ "node", "app.js" ]
+CMD [ "npm", "start" ]
