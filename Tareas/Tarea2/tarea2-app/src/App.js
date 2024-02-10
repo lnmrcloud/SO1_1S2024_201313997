@@ -2,22 +2,25 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const convertiraBase64=(archivos) =>{
+    Array.from(archivos).forEach(archivo=>{
+      var reader =new FileReader();
+      reader.readAsDataURL(archivo);
+      reader.onload=function(){
+        var arrayAux=[];
+        var base64= reader.result;
+        arrayAux=base64.split(',');
+        console.log(arrayAux[1]);
+      }
+    })
+
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input type="file" multiple onChange={(e)=>convertiraBase64(e.target.files)}/>
     </div>
   );
 }

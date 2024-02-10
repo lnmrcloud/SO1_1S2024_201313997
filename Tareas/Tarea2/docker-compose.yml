@@ -1,0 +1,52 @@
+version: '7.0.5'
+
+services:
+
+  mongo:
+    image: mongo:latest
+    restart: always
+    container_name: contenedor_mongodb
+    hostname: host-mongo
+    #environment:
+    #  MONGO_INITDB_ROOT_USERNAME: root
+    #  MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - ./mongo/data:/data/db
+    ports:
+      - "27071:27017"
+    networks:
+      - node-network
+
+  frontend:
+    container_name: frontend
+    build: ./tarea2-app
+    volumes:
+      - './tarea2-app:/tarea2-app'
+      - '/tarea2-app/node_modules'
+    ports:
+      - 3000:3000
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: npm start
+    networks:
+      - node-network
+
+  server-node:
+    build: ./server-node
+    depends_on:
+      - mongo
+    ports:
+      - 8080:8080
+    command: npm start
+    networks:
+      - node-network
+    links:
+      - mongo
+
+networks: 
+  node-network:
+    driver: bridge 
+
+volumes:
+  mongo: {}

@@ -31,7 +31,8 @@ app.get('/cervezas', function(req, res) {
   res.json({ mensaje: '¡A beber cerveza!' })  
 })
 
-mongoose.connect('mongodb://root:root@127.0.0.1:27000/'),{
+//mongoose.connect('mongodb://root:root@127.0.0.1:27000/'),{
+  mongoose.connect('mongodb://mongo:27017/'),{
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,

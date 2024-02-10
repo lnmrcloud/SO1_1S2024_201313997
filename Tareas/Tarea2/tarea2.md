@@ -42,3 +42,4 @@ Verificar el estado de las imagenes y ambiente local o red local de tarea
 
 + node tutorial base [Creación de una API con node.js](https://juanda.gitbooks.io/webapps/content/api/creacion_de_una_api_con_nodejs.html)
 + node docker base [How To Build a Node.js Application with Docker](https://www.digitalocean.com/community/tutorials/how-to-build-a-node-js-application-with-docker)
++ docker compose up [How to make a react app docker compose - stackoverflow](https://stackoverflow.com/questions/63691203/how-do-i-make-a-react-app-in-docker-compose-container-is-exiting-after-build-st)
