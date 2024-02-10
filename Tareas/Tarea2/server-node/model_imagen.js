@@ -3,9 +3,12 @@ const mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 
 var modelImage = new Schema({
-    producto_nombre: {
+    titulo: {
         type: String
     },
+    path:{
+        type: String
+    }
 
 })
 
