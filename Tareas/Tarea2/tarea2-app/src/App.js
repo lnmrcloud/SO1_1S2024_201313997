@@ -20,7 +20,8 @@ function App(){
 
   //Enviar a guardar titulo e imagen a la BD Mongo
   const handleClick = () => {
-    Axios.post("http://127.0.0.1:8080/items", {
+    //Axios.post("http://127.0.0.1:8080/items", {
+    Axios.post("http://127.0.0.1:8090/items", {
        titulo: enviar_titulo,
        base64: enviar_base64
     })
@@ -28,7 +29,8 @@ function App(){
 
 //Consultar por titulo la imagen a mostrar de base64 a imagen
 const handleClick2 = () => {
-  var imagen = Axios.post("http://127.0.0.1:8080/obteneritems", {
+  //var imagen = Axios.post("http://127.0.0.1:8080/obteneritems", {
+  var imagen = Axios.post("http://127.0.0.1:8090/obteneritems", {
      titulo: inputRef2.current.value
   }).then(res => {
     const data = res.data

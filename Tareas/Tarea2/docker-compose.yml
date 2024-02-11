@@ -8,8 +8,8 @@ services:
     container_name: contenedor_mongodb
     hostname: host-mongo
     #environment:
-    #  MONGO_INITDB_ROOT_USERNAME: root
-    #  MONGO_INITDB_ROOT_PASSWORD: root
+      #MONGO_INITDB_ROOT_USERNAME: root
+      #MONGO_INITDB_ROOT_PASSWORD: root
     volumes:
       - ./mongo/data:/data/db
     ports:
@@ -18,29 +18,38 @@ services:
       - node-network
 
   frontend:
-    container_name: frontend
+    depends_on:
+      - servernode
     build: ./tarea2-app
     volumes:
       - './tarea2-app:/tarea2-app'
       - '/tarea2-app/node_modules'
     ports:
-      - 3000:3000
+      - "3000:3000"
     stdin_open: true
     environment:
       - CHOKIDAR_USEPOLLING=true
     command: npm start
     networks:
       - node-network
+    links:
+      - servernode
 
-  server-node:
+
+  servernode:
     build: ./server-node
     depends_on:
       - mongo
     ports:
-      - 8080:8080
+      - "8090:8080"
+    volumes:
+      - './server-node:/server-node'
+      - '/server-node/node_modules'
     command: npm start
     networks:
       - node-network
+    stdin_open: true
+    restart: always
     links:
       - mongo
 
