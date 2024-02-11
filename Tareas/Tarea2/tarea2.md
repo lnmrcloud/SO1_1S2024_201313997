@@ -2,6 +2,10 @@
 
 LUIS NOE MARTINEZ RIVERA 201313997
 
+## VIDEO TAREA 2
+
++ [TAREA 2 - YOUTUBE - Entrega](https://youtu.be/MfXT8cTsTYg)
+
 ## REST API
 
 ### CONFIGURACION NODE
@@ -31,7 +35,7 @@ Verificar el estado de las imagenes y ambiente local o red local de tarea
 
 ## DOCKER-COMPOSE
 
-
++ docker-compose up
 
 ## VERSIONES DE HERRAMIENTAS
 
