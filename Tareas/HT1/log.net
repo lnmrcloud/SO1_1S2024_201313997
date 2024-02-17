@@ -1,0 +1,1 @@
+net usershare add: share name /home/nmartinez/hojadetrabajo1 contains invalid characters (any of %<>*?|/\+=;:",)

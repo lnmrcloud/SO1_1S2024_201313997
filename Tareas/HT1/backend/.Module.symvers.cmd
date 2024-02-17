@@ -1,0 +1,1 @@
+cmd_/home/nmartinez/hojadetrabajo1/backend/Module.symvers := sed 's/\.ko$$/\.o/' /home/nmartinez/hojadetrabajo1/backend/modules.order | scripts/mod/modpost -m -a  -o /home/nmartinez/hojadetrabajo1/backend/Module.symvers -e -i Module.symvers   -T -
