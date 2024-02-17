@@ -1,23 +1,26 @@
-# Tarea 2
+# Hoja de Trabajo 1
 
 LUIS NOE MARTINEZ RIVERA 201313997
 
 ## VIDEO TAREA 3
 
-+ [TAREA 3 - YOUTUBE - Entrega](https://youtu.be/)
++ [Hoja de Trabajo 1 - YOUTUBE - Entrega](https://youtu.be/PWZihmxH5SQ)
 
-## FRONT-END
+## INSTRUCCIONES
 
-+ Crear la aplicación de React
-+ npx create-react-app tarea2-app
-c
++ En la carpeta de backend, comando: make ejecutar .c
++ En la carpeta del backed, para crear módulo, comando: sudo insmod ram.ko
++ En terminal, comando: cd /proc
++ En ubicación /proc, comando: ls y encontrar ram_201313997
++ Abrir archivo ram_201313997 con, comando: cat ram_201313997
++ En carpeta de ht1, comando: wilds build
++ Ejecutar en dirección /build/bin/ el ejecutable creado
++ Al finalizar con: sudo rmmod ram.ko eliminar el módulo
 
 ## VERSIONES
 
 + node -v v20.11.1
 + npm 10.2.4
-
-
 + curl 7.68.0
 + go version go1.20.0 linux/amd64
 
