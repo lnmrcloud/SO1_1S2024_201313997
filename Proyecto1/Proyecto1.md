@@ -11,6 +11,22 @@ LUIS NOE MARTINEZ RIVERA 201313997
 
 + Ip local de conexión 192.168.1.20/24
 
+## CONFIGURACION
+
+### BACKEND
+
++ go mod init e
++ go get github.com/gin-gonic/gin
++ dockerfile
+
+
+### FRONTEND
+
++ npx create-react-app proyecto1-app
++ npm start
++ dockerfile
+
+
 ## INSTRUCCIONES
 
 
@@ -20,6 +36,16 @@ LUIS NOE MARTINEZ RIVERA 201313997
 + npm 10.2.4
 + curl 7.81.0
 + go version go1.18.1 linux/amd64
+
+
+## COMANDOS DOCKER
+
++ docker login
++ docker images
++ docker ps -a 
++ docker build -t nombre-app .
++ docker rm container-id
+
 
 ## ANEXOS
 
