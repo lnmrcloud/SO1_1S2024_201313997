@@ -1,0 +1,1 @@
+cmd_/home/nmartinez/Documentos/GitHub/SO1_1S2024_201313997/Proyecto1/kernel/ram/ram.mod := { echo  /home/nmartinez/Documentos/GitHub/SO1_1S2024_201313997/Proyecto1/kernel/ram/ram.o;  echo; } > /home/nmartinez/Documentos/GitHub/SO1_1S2024_201313997/Proyecto1/kernel/ram/ram.mod

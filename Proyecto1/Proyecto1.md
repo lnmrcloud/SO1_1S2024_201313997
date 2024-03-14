@@ -13,6 +13,19 @@ LUIS NOE MARTINEZ RIVERA 201313997
 
 ## CONFIGURACION
 
+### MODULOS KERNEL
+
++ sys/sysinfo.h
++ linux/mm.h
++ ram.c - Metodos para obtencion de uso de ram en Kernel
++ cpu.c - Metodos para obtencion de uso de cpu en Kernel
++ comando: sudo insmod ram.ko, modulo
++ comando: cd /proc
++ comando: ls ... ram_so1_1s2024
++ comanndo: cat ram_so1_1s2024
++ repetir con cpu.ko
++ Finalizar: sudo rmmod ram.ko eliminar modulo
+
 ### BACKEND
 
 + go mod init e
@@ -25,6 +38,7 @@ LUIS NOE MARTINEZ RIVERA 201313997
 + npx create-react-app proyecto1-app
 + npm start
 + dockerfile
++ docker build -t docker
 
 
 ## INSTRUCCIONES
