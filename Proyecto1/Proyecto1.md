@@ -26,6 +26,16 @@ LUIS NOE MARTINEZ RIVERA 201313997
 + repetir con cpu.ko
 + Finalizar: sudo rmmod ram.ko eliminar modulo en carpeta /proc
 
+
++ cat stat - obtener el uso del cpu
++ cpu  --    --  --     idle   --   -- --  -- -- -- 
++ cpu  84034 200 93568 3032902 3372 0 8586 0 0 0
++ Se descarta el "cpu"
++ Suman todos los valores
++ Se divide la columa idle entre valor total para obtener el porcentaje de idle
++ Diferencia a 1 y porcentaje para el %uso de cpu
+
+
 ### BACKEND
 
 + go mod init e
