@@ -73,23 +73,12 @@ static int escribir_archivo(struct seq_file *archivo, void *v) {
     return 0;
     */
     for_each_process(cpu) {
-        seq_printf(archivo, "%d", cpu->pid); // PID
-        seq_printf(archivo, ",");
-        seq_printf(archivo, "%s", cpu->comm); //nombre de proceso
-        seq_printf(archivo, ",");
-        seq_printf(archivo, "%lu", cpu->__state); //estado
-        seq_printf(archivo, ",");
-
         if (cpu->mm) {
             rss = get_mm_rss(cpu->mm) << PAGE_SHIFT; //memory management
             seq_printf(archivo, "%lu", rss);
         } else {
-            seq_printf(archivo, "%s", "");
+            seq_printf(archivo, "%s", "0");
         }
-        seq_printf(archivo, ",");
-
-        seq_printf(archivo, "%d", cpu->cred->user->uid);
-        
         seq_printf(archivo, ";");
     }
 
