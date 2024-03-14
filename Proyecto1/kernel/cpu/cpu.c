@@ -24,20 +24,22 @@ struct task_struct *child;
 unsigned long rss;
 
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Modulo de CPU para el Lab de Sopes 1");
-MODULE_AUTHOR("Dani :)");
+MODULE_DESCRIPTION("Modulo de RAM, Laboratorio Sistemas Operativos 1 Proyecto 1");
+MODULE_AUTHOR("NMARTINEZ");
 
 static int escribir_archivo(struct seq_file *archivo, void *v) {
+
+    /*
     for_each_process(cpu) {
-        seq_printf(archivo, "PID%d", cpu->pid);
+        seq_printf(archivo, "PID%d", cpu->pid); // PID
         seq_printf(archivo, ",");
-        seq_printf(archivo, "%s", cpu->comm);
+        seq_printf(archivo, "%s", cpu->comm); //nombre de proceso
         seq_printf(archivo, ",");
-        seq_printf(archivo, "%lu", cpu->__state);
+        seq_printf(archivo, "%lu", cpu->__state); //estado
         seq_printf(archivo, ",");
 
         if (cpu->mm) {
-            rss = get_mm_rss(cpu->mm) << PAGE_SHIFT;
+            rss = get_mm_rss(cpu->mm) << PAGE_SHIFT; //memory management
             seq_printf(archivo, "%lu", rss);
         } else {
             seq_printf(archivo, "%s", "");
@@ -69,6 +71,29 @@ static int escribir_archivo(struct seq_file *archivo, void *v) {
     }
 
     return 0;
+    */
+    for_each_process(cpu) {
+        seq_printf(archivo, "%d", cpu->pid); // PID
+        seq_printf(archivo, ",");
+        seq_printf(archivo, "%s", cpu->comm); //nombre de proceso
+        seq_printf(archivo, ",");
+        seq_printf(archivo, "%lu", cpu->__state); //estado
+        seq_printf(archivo, ",");
+
+        if (cpu->mm) {
+            rss = get_mm_rss(cpu->mm) << PAGE_SHIFT; //memory management
+            seq_printf(archivo, "%lu", rss);
+        } else {
+            seq_printf(archivo, "%s", "");
+        }
+        seq_printf(archivo, ",");
+
+        seq_printf(archivo, "%d", cpu->cred->user->uid);
+        
+        seq_printf(archivo, ";");
+    }
+
+    return 0;
 }
 
 //Funcion que se ejecutara cada vez que se lea el archivo con el comando CAT
@@ -87,16 +112,16 @@ static struct proc_ops operaciones =
 //Funcion a ejecuta al insertar el modulo en el kernel con insmod
 static int _insert(void)
 {
-    proc_create("cpu_201800722", 0, NULL, &operaciones);
-    printk(KERN_INFO "Jose Daniel Velasquez Orozco\n");
+    proc_create("cpu_so1_1s2024", 0, NULL, &operaciones);
+    printk(KERN_INFO "201313997\n");
     return 0;
 }
 
 //Funcion a ejecuta al remover el modulo del kernel con rmmod
 static void _remove(void)
 {
-    remove_proc_entry("cpu_201800722", NULL);
-    printk(KERN_INFO "Segundo Semestre 2023\n");
+    remove_proc_entry("cpu_so1_1s2024", NULL);
+    printk(KERN_INFO "Laboratorio Sistemas Operativos 1 proyecto 1\n");
 }
 
 module_init(_insert);

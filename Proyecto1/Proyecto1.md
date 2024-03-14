@@ -24,7 +24,7 @@ LUIS NOE MARTINEZ RIVERA 201313997
 + comando: ls ... ram_so1_1s2024
 + comanndo: cat ram_so1_1s2024
 + repetir con cpu.ko
-+ Finalizar: sudo rmmod ram.ko eliminar modulo
++ Finalizar: sudo rmmod ram.ko eliminar modulo en carpeta /proc
 
 ### BACKEND
 

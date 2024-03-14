@@ -1,0 +1,1 @@
+cmd_/home/nmartinez/Documentos/GitHub/SO1_1S2024_201313997/Proyecto1/kernel/cpu/Module.symvers := sed 's/\.ko$$/\.o/' /home/nmartinez/Documentos/GitHub/SO1_1S2024_201313997/Proyecto1/kernel/cpu/modules.order | scripts/mod/modpost -m -a  -o /home/nmartinez/Documentos/GitHub/SO1_1S2024_201313997/Proyecto1/kernel/cpu/Module.symvers -e -i Module.symvers   -T -
