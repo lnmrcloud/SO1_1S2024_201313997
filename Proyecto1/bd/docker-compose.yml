@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+
+  db:
+    build: .
+    stdin_open: true
+    tty: true
+    restart: always
+    container_name: contenedor_mysql
+    hostname: host-mysql
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_PASSWORD: '2110'
+      MYSQL_ROOT_PASSWORD: '2110'
+    volumes:
+      - my-db:/var/lib/mysql
+    ports:
+      - '3366:3306'
+    expose:
+      - '3366'
+    networks:
+      - node-network
+
+networks: 
+  node-network:
+    driver: bridge 
+
+volumes:
+  my-db:

@@ -35,13 +35,11 @@ LUIS NOE MARTINEZ RIVERA 201313997
 + Se divide la columa idle entre valor total para obtener el porcentaje de idle
 + Diferencia a 1 y porcentaje para el %uso de cpu
 
-
 ### BACKEND
 
 + go mod init e
 + go get github.com/gin-gonic/gin
 + dockerfile
-
 
 ### FRONTEND
 
@@ -50,6 +48,10 @@ LUIS NOE MARTINEZ RIVERA 201313997
 + dockerfile
 + docker build -t docker
 
+### DATABASE
+
++ local mysql -u root -p
++ docker-compose up -d
 
 ## INSTRUCCIONES
 
@@ -68,8 +70,12 @@ LUIS NOE MARTINEZ RIVERA 201313997
 + docker images
 + docker ps -a 
 + docker build -t nombre-app .
++ docker volume ls
 + docker rm container-id
-
++ docker rmi image-id -f
++ docker rm -v container-id 
++ docker volume rm name_volume
++ docker volume prune
 
 ## ANEXOS
 
