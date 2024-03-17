@@ -19,7 +19,7 @@ LUIS NOE MARTINEZ RIVERA 201313997
 + linux/mm.h
 + ram.c - Metodos para obtencion de uso de ram en Kernel
 + cpu.c - Metodos para obtencion de uso de cpu en Kernel
-+ comando: sudo insmod ram.ko, modulo
++ comando: sudo insmod ram.ko, modulo ; en carpeta de Kernel
 + comando: cd /proc
 + comando: ls ... ram_so1_1s2024
 + comanndo: cat ram_so1_1s2024
@@ -71,12 +71,15 @@ LUIS NOE MARTINEZ RIVERA 201313997
 + docker ps -a 
 + docker build -t nombre-app .
 + docker volume ls
++ docker-compose build
+
+
 + docker rm container-id
 + docker rmi image-id -f
 + docker rm -v container-id 
 + docker volume rm name_volume
 + docker volume prune
-+ docker-compose build
++ docker system prune -a
 
 ## ANEXOS
 
