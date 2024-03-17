@@ -52,6 +52,7 @@ services:
       - '../backend/:/server-go'
       - '/backend/server-go'
       - '/proc/ram_so1_1s2024:/server-go/ram_so1_1s2024'
+      - '/proc/cpu_so1_1s2024:/server-go/cpu_so1_1s2024'
     command: go run hello.go
     networks:
       - node-network

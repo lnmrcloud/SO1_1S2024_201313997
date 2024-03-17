@@ -17,11 +17,6 @@ const ls = "ls"
 const comando = "ram_so1_1s2024"
 const meminfo = "meminfo"
 
-type data struct {
-	Carne  string //json:id
-	Nombre string //json:tittle
-}
-
 func get_ram_kernel(command string) (string, string, error) {
 	var stdout bytes.Buffer
 	var stderr bytes.Buffer
@@ -39,15 +34,18 @@ func get_ram_kernel(command string) (string, string, error) {
 
 func main() {
 	app := fiber.New()
+
+	// CONFIGURACION DE SOLICITUDES PARA USO DE BACKEND
+
 	app.Use(cors.New(cors.Config{
 		AllowOrigins: "http://localhost:3000",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
-
+	//HEALTHCHECK
 	app.Get("/healthcheck", func(c *fiber.Ctx) error {
 		return c.SendString("Ok")
 	})
-
+	//OBTENER RAM DE KERNEL IMPORTADO CON VOLUMEN DESDE HOST UBUNTU 20.04
 	app.Get("/ram_kernel", func(c *fiber.Ctx) error {
 		out, errout, err := get_ram_kernel("ls -ltr")
 		if err != nil {
@@ -59,16 +57,6 @@ func main() {
 		return c.SendString(out)
 	})
 
-	app.Get("/data", func(c *fiber.Ctx) error {
-
-		datos := []data{
-			{
-				Carne:  "201313997",
-				Nombre: "Luis Noe Martinez Rivera",
-			},
-		}
-		return c.JSON(datos)
-	})
 	log.Fatal(app.Listen(":9000"))
 
 }

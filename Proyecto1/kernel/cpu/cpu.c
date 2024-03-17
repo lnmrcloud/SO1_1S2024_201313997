@@ -29,7 +29,6 @@ MODULE_AUTHOR("NMARTINEZ");
 
 static int escribir_archivo(struct seq_file *archivo, void *v) {
 
-    /*
     for_each_process(cpu) {
         seq_printf(archivo, "PID%d", cpu->pid); // PID
         seq_printf(archivo, ",");
@@ -71,7 +70,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v) {
     }
 
     return 0;
-    */
+   /*
     for_each_process(cpu) {
         if (cpu->mm) {
             rss = get_mm_rss(cpu->mm) << PAGE_SHIFT; //memory management
@@ -83,6 +82,7 @@ static int escribir_archivo(struct seq_file *archivo, void *v) {
     }
 
     return 0;
+    */
 }
 
 //Funcion que se ejecutara cada vez que se lea el archivo con el comando CAT
