@@ -21,6 +21,26 @@ services:
       - '3366'
     networks:
       - node-network
+  
+  frontend:
+    #depends_on:
+    #  - servernode
+    build: ../frontend/proyecto1-app
+    volumes:
+      - '../frontend/proyecto1-app:/proyecto1-app'
+      - 'frontend/proyecto1-app/node_modules'
+    ports:
+      - "80:3000"
+    expose:
+      - '80'
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: npm start
+    networks:
+      - node-network
+    #links:
+    # - servernode
 
 networks: 
   node-network:
