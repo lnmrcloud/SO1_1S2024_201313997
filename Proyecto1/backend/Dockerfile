@@ -6,6 +6,7 @@ COPY go.mod go.sum ./
 
 RUN go mod download
 RUN go get github.com/gin-gonic/gin
+RUN go get github.com/gofiber/fiber/v2
 
 COPY *.go . 
 

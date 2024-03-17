@@ -23,8 +23,8 @@ services:
       - node-network
   
   frontend:
-    #depends_on:
-    #  - servernode
+    depends_on:
+      - servergo
     build: ../frontend/proyecto1-app
     volumes:
       - '../frontend/proyecto1-app:/proyecto1-app'
@@ -39,8 +39,25 @@ services:
     command: npm start
     networks:
       - node-network
-    #links:
-    # - servernode
+    links:
+     - servergo
+
+  servergo:
+    build: ../backend/
+    depends_on:
+      - db
+    ports:
+      - "9000:9000"
+    volumes:
+      - '../backend/:/server-go'
+      - '/backend/server-go'
+    command: go run hello.go
+    networks:
+      - node-network
+    stdin_open: true
+    restart: always
+    links:
+      - db
 
 networks: 
   node-network:

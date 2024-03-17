@@ -76,6 +76,7 @@ LUIS NOE MARTINEZ RIVERA 201313997
 + docker rm -v container-id 
 + docker volume rm name_volume
 + docker volume prune
++ docker-compose build
 
 ## ANEXOS
 
